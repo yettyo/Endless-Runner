@@ -507,8 +507,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstaclePrefabs:
-  - {fileID: 320929090112028572, guid: 9a89f933fc27fd046a5b134d569738bc, type: 3}
-  obstaclePoolSize: 5
+  - {fileID: 2891689127095716851, guid: 70b66931616818e40a4a5217fd088f30, type: 3}
+  - {fileID: 7102919256268690482, guid: 3ae6875111ab90344a48c4b0eb3d0eda, type: 3}
+  - {fileID: 5782280050657696718, guid: 0caa9bc68d9662b40850fa00251c0036, type: 3}
+  obstaclePoolSize: 10
 --- !u!114 &1716370954
 MonoBehaviour:
   m_ObjectHideFlags: 0
