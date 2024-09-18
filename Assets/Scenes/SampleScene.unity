@@ -470,11 +470,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1716370952}
-  - component: {fileID: 1716370954}
-  - component: {fileID: 1716370953}
   - component: {fileID: 1716370955}
   m_Layer: 0
-  m_Name: LevelGenerator
+  m_Name: ChunkGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -495,39 +493,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1716370953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1716370950}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b8c745e6a712444395c0b8cb6d1c056, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obstaclePrefabs:
-  - {fileID: 2891689127095716851, guid: 70b66931616818e40a4a5217fd088f30, type: 3}
-  - {fileID: 7102919256268690482, guid: 3ae6875111ab90344a48c4b0eb3d0eda, type: 3}
-  - {fileID: 5782280050657696718, guid: 0caa9bc68d9662b40850fa00251c0036, type: 3}
-  obstaclePoolSize: 10
---- !u!114 &1716370954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1716370950}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f020e9805722be9469bbadafd2313348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundPrefab: {fileID: 1296847247044081438, guid: 0b9038a34b5fec848836133e77468ed0, type: 3}
-  poolSize: 3
-  cubeLength: 100
-  playerOffset: 100
 --- !u!114 &1716370955
 MonoBehaviour:
   m_ObjectHideFlags: 0
