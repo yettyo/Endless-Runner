@@ -472,6 +472,7 @@ GameObject:
   - component: {fileID: 1716370952}
   - component: {fileID: 1716370954}
   - component: {fileID: 1716370953}
+  - component: {fileID: 1716370955}
   m_Layer: 0
   m_Name: LevelGenerator
   m_TagString: Untagged
@@ -501,7 +502,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716370950}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b8c745e6a712444395c0b8cb6d1c056, type: 3}
   m_Name: 
@@ -518,7 +519,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716370950}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f020e9805722be9469bbadafd2313348, type: 3}
   m_Name: 
@@ -526,6 +527,27 @@ MonoBehaviour:
   groundPrefab: {fileID: 1296847247044081438, guid: 0b9038a34b5fec848836133e77468ed0, type: 3}
   poolSize: 3
   cubeLength: 100
+  playerOffset: 100
+--- !u!114 &1716370955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716370950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f5631579146e8c43933eea8dc77caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialChunkPrefab: {fileID: 1296847247044081438, guid: 8ed38cf649c9a0b488af2c7987520b3e, type: 3}
+  chunkPrefabs:
+  - {fileID: 1296847247044081438, guid: fff94a3ddd4ffa847999be139fd97f73, type: 3}
+  - {fileID: 1296847247044081438, guid: 5fc48a3bfcb7ca64eb3cc86a141c18e8, type: 3}
+  - {fileID: 1296847247044081438, guid: 5f28c5e6fce25ec4bb1785698ba50dab, type: 3}
+  - {fileID: 1296847247044081438, guid: fc44244138c86794fb31ac7315837b7b, type: 3}
+  poolSize: 10
+  chunkLength: 100
   playerOffset: 100
 --- !u!1001 &8265070479208931619
 PrefabInstance:

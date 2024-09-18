@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float forwardSpeed = 10f;
-    public float strafeSpeed = 4f;
+    public float strafeSpeed = 10f;
     public float jumpForce = 7f;
     public LayerMask groundLayer;
     private Rigidbody rb;
