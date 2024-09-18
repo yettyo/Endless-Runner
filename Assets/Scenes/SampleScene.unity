@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forwardSpeed: 10
-  strafeSpeed: 4
+  laneSwitchSpeed: 5
   jumpForce: 7
   groundLayer:
     serializedVersion: 2

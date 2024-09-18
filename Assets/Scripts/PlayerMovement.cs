@@ -1,39 +1,46 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class CharacterMovement : MonoBehaviour
 {
     public float forwardSpeed = 10f;
-    public float strafeSpeed = 10f;
+    public float laneSwitchSpeed = 5f;
     public float jumpForce = 7f;
     public LayerMask groundLayer;
+
+    private int currentLane = 1;
+    private readonly float[] lanePositions = { -7.5f, 0f, 7.5f };
     private Rigidbody rb;
-    
-    void Start() {
+
+    void Start()
+    {
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update() {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        Move(horizontalInput);
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && currentLane > 0)
+        {
+            currentLane--;
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && currentLane < 2)
+        {
+            currentLane++;
+        }
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             Jump();
         }
+        Move();
     }
 
-    void Move(float horizontalInput)
+    void Move()
     {
-        Vector3 forwardMovement = forwardSpeed * Time.deltaTime * Vector3.forward;
+        float targetX = lanePositions[currentLane];
 
-        Vector3 strafeMovement = horizontalInput * strafeSpeed * Time.deltaTime * Vector3.right;
+        Vector3 targetPosition = new(targetX, transform.position.y, transform.position.z + forwardSpeed * Time.deltaTime);
 
-        Vector3 totalMovement = forwardMovement + strafeMovement;
-
-        rb.MovePosition(transform.position + totalMovement);
+        rb.MovePosition(targetPosition);
     }
 
     void Jump()
@@ -41,8 +48,8 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
-    private bool IsGrounded()
+    bool IsGrounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, 1.1f, groundLayer);
-    }    
+    }
 }
