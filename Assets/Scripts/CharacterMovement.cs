@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
@@ -10,6 +11,7 @@ public class CharacterMovement : MonoBehaviour
     private int currentLane = 1;
     private readonly float[] lanePositions = { -7.5f, 0f, 7.5f };
     private Rigidbody rb;
+    private bool canMove = true;
 
     void Start()
     {
@@ -17,7 +19,9 @@ public class CharacterMovement : MonoBehaviour
     }
 
     void Update()
-    {
+    {   
+        if(!canMove) return;
+
         if (Input.GetKeyDown(KeyCode.LeftArrow) && currentLane > 0)
         {
             currentLane--;
@@ -51,5 +55,11 @@ public class CharacterMovement : MonoBehaviour
     bool IsGrounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, 1.1f, groundLayer);
+    }
+
+    public void StopMovement()
+    {
+        canMove = false;
+        rb.velocity = Vector3.zero;
     }
 }
