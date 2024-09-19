@@ -1,10 +1,11 @@
 using System;
 using UnityEngine;
+using DG.Tweening;  // Include DOTween namespace
 
 public class CharacterMovement : MonoBehaviour
 {
     public float forwardSpeed = 10f;
-    public float laneSwitchSpeed = 5f;
+    public float laneSwitchSpeed = 0.5f;
     public float jumpForce = 7f;
     public LayerMask groundLayer;
 
@@ -20,31 +21,38 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {   
-        if(!canMove) return;
+        if (!canMove) return;
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) && currentLane > 0)
         {
             currentLane--;
+            SwitchLane();
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow) && currentLane < 2)
         {
             currentLane++;
+            SwitchLane();
         }
 
+    
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             Jump();
         }
-        Move();
+        MoveForward();
     }
 
-    void Move()
+    void SwitchLane()
     {
         float targetX = lanePositions[currentLane];
 
-        Vector3 targetPosition = new(targetX, transform.position.y, transform.position.z + forwardSpeed * Time.deltaTime);
+        transform.DOMoveX(targetX, laneSwitchSpeed).SetEase(Ease.OutExpo);
+    }
 
-        rb.MovePosition(targetPosition);
+    void MoveForward()
+    {
+        Vector3 forwardMove = new(transform.position.x, transform.position.y, transform.position.z + forwardSpeed * Time.deltaTime);
+        transform.position = forwardMove;
     }
 
     void Jump()
