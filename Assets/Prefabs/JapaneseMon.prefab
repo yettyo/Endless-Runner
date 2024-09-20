@@ -152,6 +152,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JapaneseMon
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 157ca9df15d27a1449d83c20a9b0704e, type: 3}
+      propertyPath: m_TagString
+      value: Coin
+      objectReference: {fileID: 0}
     - target: {fileID: 1290268953411352940, guid: 157ca9df15d27a1449d83c20a9b0704e, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
@@ -190,49 +194,19 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 157ca9df15d27a1449d83c20a9b0704e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4466155161065130045}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 157ca9df15d27a1449d83c20a9b0704e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3723338989820921261}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 157ca9df15d27a1449d83c20a9b0704e, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 4680788344168800706}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 157ca9df15d27a1449d83c20a9b0704e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8281658584086210503}
+      addedObject: {fileID: -5916618630788045956}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 157ca9df15d27a1449d83c20a9b0704e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2255967440047665956}
   m_SourcePrefab: {fileID: 100100000, guid: 157ca9df15d27a1449d83c20a9b0704e, type: 3}
 --- !u!1 &3322207521830531862 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 157ca9df15d27a1449d83c20a9b0704e, type: 3}
   m_PrefabInstance: {fileID: 2511799070442114631}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4466155161065130045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3322207521830531862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8878c1d51fe27a46a4d0cc12db84050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDistance: 0.5
-  moveDuration: 1
---- !u!114 &3723338989820921261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3322207521830531862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caf4a096e4c68f948880c50f5deab352, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinValue: 1
 --- !u!65 &4680788344168800706
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -254,7 +228,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0629725, y: 0.3793582, z: 1.9661254}
   m_Center: {x: 0.010053873, y: -0.108588666, z: 0.009167135}
---- !u!114 &8281658584086210503
+--- !u!114 &-5916618630788045956
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,7 +237,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 3322207521830531862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caf4a096e4c68f948880c50f5deab352, type: 3}
+  m_Script: {fileID: 11500000, guid: c8878c1d51fe27a46a4d0cc12db84050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinValue: 1
+  moveDistance: 0.5
+  moveDuration: 1
+--- !u!114 &2255967440047665956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322207521830531862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f44bbbe18637a24ea9aeebc317e8079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

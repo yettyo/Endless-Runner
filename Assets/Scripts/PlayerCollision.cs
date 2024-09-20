@@ -19,6 +19,7 @@ public class PlayerCollision : MonoBehaviour
         if(other.CompareTag("Obstacle"))
         {
             Debug.Log("GameOver");
+            CoinManager.Instance.SaveCoins();
             if (characterMovement != null)
             {
                 characterMovement.StopMovement();

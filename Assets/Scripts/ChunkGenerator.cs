@@ -71,8 +71,20 @@ public class ChunkGenerator : MonoBehaviour
     }
     private void RecycleChunk()
     {
-        chunkPool[currentChunkIndex].SetActive(false);
+        GameObject chunk = chunkPool[currentChunkIndex];
+        chunk.SetActive(false);
 
         SpawnChunk();
+        ReactivateCoins(chunk);
+    }
+
+    void ReactivateCoins(GameObject chunk)
+    {
+        // Assuming all coin objects are tagged with "Coin"
+        Coin[] coinsInChunk = chunk.GetComponentsInChildren<Coin>(true);
+        foreach (Coin coin in coinsInChunk)
+        {
+            coin.gameObject.SetActive(true);
+        }
     }
 }
