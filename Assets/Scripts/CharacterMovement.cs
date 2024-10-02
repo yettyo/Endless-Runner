@@ -1,14 +1,15 @@
 using System;
 using UnityEngine;
-using DG.Tweening;  // Include DOTween namespace
+using DG.Tweening;
+using UnityEditor.Animations;  // Include DOTween namespace
 
 public class CharacterMovement : MonoBehaviour
 {
     public float forwardSpeed = 10f;
-    public float laneSwitchSpeed = 0.5f;
+    public float laneSwitchSpeed = 0.3f;
     public float jumpForce = 7f;
     public LayerMask groundLayer;
-
+    public Animator playerAnimator;
     private int currentLane = 1;
     private readonly float[] lanePositions = { -7.5f, 0f, 7.5f };
     private Rigidbody rb;
@@ -58,6 +59,7 @@ public class CharacterMovement : MonoBehaviour
     void Jump()
     {
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        playerAnimator.SetTrigger("jumpTrigger");
     }
 
     bool IsGrounded()
